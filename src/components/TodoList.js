@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CreateTask from "../modals/CreateTask";
+import Card from "./Card";
 
 const TodoList = () => {
     const [modal, setModal] = useState(false);
@@ -33,7 +34,7 @@ const TodoList = () => {
           <button className="btn btn-primary mt-2" onClick={() => { setModal(true); }}>Create Task</button>
       </div>
       <div className="task-container">
-          {taskList.map((obj) => <li>{obj.taskTitle}</li>)}
+          {taskList.map((obj, index) => <Card taskObj={obj} index={index}/>)}
       </div>
       <CreateTask modal={modal} toggle={toggle} saveTask={saveTask} />
     </>
