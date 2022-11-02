@@ -34,7 +34,7 @@ const TodoList = () => {
           <button className="btn btn-primary mt-2" onClick={() => { setModal(true); }}>Create Task</button>
       </div>
       <div className="task-container">
-          {taskList.map((obj, index) => <Card taskObj={obj} index={index}/>)}
+          {taskList && taskList.map((obj, index) => <Card taskObj={obj} index={index}/>)}
       </div>
       <CreateTask modal={modal} toggle={toggle} saveTask={saveTask} />
     </>
